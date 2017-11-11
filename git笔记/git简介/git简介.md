@@ -92,3 +92,8 @@ git reset HEAD 文件名 回到上一次的缓存区
 
 
 ####GUI界面化
+![Alt text](./1510415684537.png)
+![Alt text](./1510415710652.png)
+![Alt text](./1510415848582.png)
+![Alt text](./1510415882685.png)
+![Alt text](./1510415911512.png)
