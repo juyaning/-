@@ -1,0 +1,126 @@
+<!DOCTYPE html><html><head><title>git简介</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="git简介">git简介</h1>
+
+
+
+<h5 id="1git是什么">1.git是什么</h5>
+
+<blockquote>
+  <p>目前世界上最先进的分布式版本控制系统</p>
+</blockquote>
+
+<h4 id="2版本控制系统和集中式有什么区别">2.版本控制系统和集中式有什么区别</h4>
+
+<blockquote>
+  <p><code>集中式版本控制系统</code> 集中放在中央服务器的 干活的时候，用的是自己电脑，要先从中央服务器获取最新的版本， 然后开始干活 ，干完了 再把自己干的活推送到中央服务器。 <br>
+  缺点：必须联网才能工作 并不利于团队开发 如果中央服务器发生了错误，  那么整个项目就报废了。 <br>
+  <code>分布式控制版本</code> 首先分布式控制系统根本没有“中央服务器” 每一个人的电脑都是一个完整的版本库 分布式系统安全性要高很多。具有强大的分支管理。</p>
+</blockquote>
+
+<h4 id="3安装git">3.安装Git</h4>
+
+<blockquote>
+  <p>Windows网址 <a href="http://git-scm.com" target="_blank">http://git-scm.com</a></p>
+</blockquote>
+
+
+
+<h5 id="配置用户不配置用户不能提交代码">配置用户（不配置用户不能提交代码）</h5>
+
+<p>因为Git是分布式版本系统控制，所以，必须都自报家门 </p>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs verilog"><div class="hljs-line">git <span class="hljs-keyword">config</span> --list 
+</div><div class="hljs-line">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">"你的名字"</span>
+</div><div class="hljs-line">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">"你的邮箱"</span>
+</div></code></pre>
+</blockquote>
+
+<h5 id="初始化git一个项目初始化一次-不能嵌套-初始化了一个仓库">初始化Git（一个项目初始化一次 不能嵌套   初始化了一个仓库）</h5>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs fortran"><div class="hljs-line">git init 告诉git那个文件夹被git所管理
+</div><div class="hljs-line">git <span class="hljs-keyword">status</span> 查看git状态
+</div></code></pre>
+</blockquote>
+
+<h5 id="添加到暂存区将文件添加到仓库-第一步">添加到暂存区（将文件添加到仓库 第一步）</h5>
+
+<p>第一步：用命令 git add告诉git 把文件添加到仓库 </p>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs dockerfile"><div class="hljs-line">git <span class="hljs-keyword">add</span><span class="bash"> . /-A/文件名</span>
+</div></code></pre>
+</blockquote>
+
+<h5 id="添加到历史区第二步">添加到历史区（第二步）</h5>
+
+<p>-m后面输入的是本次提交的说明 可以输入任意内容，当然最好是有意义的</p>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs nginx"><div class="hljs-line"><span class="hljs-attribute">git</span> commit -m<span class="hljs-string">"备注消息"</span>
+</div></code></pre>
+</blockquote>
+
+<h5 id="掌握工作区的状态-查看修改内容">掌握工作区的状态 查看修改内容</h5>
+
+
+
+<h6 id="需求如果我们修改了这个文件夹-怎么查看当前的状态">需求：如果我们修改了这个文件夹 怎么查看当前的状态</h6>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs fortran"><div class="hljs-line">git <span class="hljs-keyword">status</span> 
+</div><div class="hljs-line">git <span class="hljs-keyword">status</span>命令可以让我们时刻掌握当前的状态
+</div></code></pre>
+</blockquote>
+
+<h6 id="需求-查看具体修改了什么内容">需求： 查看具体修改了什么内容</h6>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs maxima"><div class="hljs-line">git <span class="hljs-built_in">diff</span> 
+</div><div class="hljs-line">查看修改的内容后 依然是和提交新文件一样的二步 第一步添加到暂存 第二步 历史区 
+</div></code></pre>
+</blockquote>
+
+
+
+<h5 id="工作区和暂存区和历史区">工作区和暂存区和历史区</h5>
+
+<blockquote>
+  <p>电脑里能看到的目录 例如一个文件夹就是一个<code>工作区</code>  <br>
+   前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+  
+  <p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+  
+  <p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+  
+  <p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。 <br>
+  所谓的<code>暂存区</code> 实际上就是要提交的文件 和修改的文件通通放到暂存区  <br>
+  那么<code>历史区</code> 就是当前的那个分支 </p>
+</blockquote>
+
+<h5 id="撤销修改">撤销修改</h5>
+
+<blockquote>
+  <p>场景1 当你改乱了工区取某一个文件的内容， 想要直接丢弃工作区的修改是 </p>
+  
+  <pre class="prettyprint hljs-dark"><code class="hljs ada"><div class="hljs-line">git checkout <span class="hljs-comment">-- file</span>
+</div></code></pre>
+  
+  <p>场景2  当你不但改乱了某一个文件的内容 还添加到了暂存区 想要丢弃 分二步</p>
+  
+  <pre class="prettyprint hljs-dark"><code class="hljs sql"><div class="hljs-line">git checkout 文件名
+</div><div class="hljs-line">git <span class="hljs-keyword">reset</span> <span class="hljs-keyword">HEAD</span> 文件名 回到上一次的缓存区
+</div></code></pre>
+  
+  <p>场景3  如果你已经提交到了历史区 那么只能使用 回滚历史版本了</p>
+  
+  <pre class="prettyprint hljs-dark"><code class="hljs sql"><div class="hljs-line">git reflog 查看所有版本
+</div><div class="hljs-line">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard 版本号</span>
+</div></code></pre>
+</blockquote></div></body></html>
