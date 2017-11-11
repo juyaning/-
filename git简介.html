@@ -14,6 +14,8 @@
   <p>目前世界上最先进的分布式版本控制系统</p>
 </blockquote>
 
+
+
 <h4 id="2版本控制系统和集中式有什么区别">2.版本控制系统和集中式有什么区别</h4>
 
 <blockquote>
@@ -21,6 +23,8 @@
   缺点：必须联网才能工作 并不利于团队开发 如果中央服务器发生了错误，  那么整个项目就报废了。 <br>
   <code>分布式控制版本</code> 首先分布式控制系统根本没有“中央服务器” 每一个人的电脑都是一个完整的版本库 分布式系统安全性要高很多。具有强大的分支管理。</p>
 </blockquote>
+
+
 
 <h4 id="3安装git">3.安装Git</h4>
 
@@ -41,6 +45,8 @@
 </div></code></pre>
 </blockquote>
 
+
+
 <h5 id="初始化git一个项目初始化一次-不能嵌套-初始化了一个仓库">初始化Git（一个项目初始化一次 不能嵌套   初始化了一个仓库）</h5>
 
 <blockquote>
@@ -48,6 +54,8 @@
 </div><div class="hljs-line">git <span class="hljs-keyword">status</span> 查看git状态
 </div></code></pre>
 </blockquote>
+
+
 
 <h5 id="添加到暂存区将文件添加到仓库-第一步">添加到暂存区（将文件添加到仓库 第一步）</h5>
 
@@ -58,6 +66,8 @@
 </div></code></pre>
 </blockquote>
 
+
+
 <h5 id="添加到历史区第二步">添加到历史区（第二步）</h5>
 
 <p>-m后面输入的是本次提交的说明 可以输入任意内容，当然最好是有意义的</p>
@@ -66,6 +76,8 @@
   <pre class="prettyprint hljs-dark"><code class="hljs nginx"><div class="hljs-line"><span class="hljs-attribute">git</span> commit -m<span class="hljs-string">"备注消息"</span>
 </div></code></pre>
 </blockquote>
+
+
 
 <h5 id="掌握工作区的状态-查看修改内容">掌握工作区的状态 查看修改内容</h5>
 
@@ -78,6 +90,8 @@
 </div><div class="hljs-line">git <span class="hljs-keyword">status</span>命令可以让我们时刻掌握当前的状态
 </div></code></pre>
 </blockquote>
+
+
 
 <h6 id="需求-查看具体修改了什么内容">需求： 查看具体修改了什么内容</h6>
 
@@ -104,6 +118,8 @@
   那么<code>历史区</code> 就是当前的那个分支 </p>
 </blockquote>
 
+
+
 <h5 id="撤销修改">撤销修改</h5>
 
 <blockquote>
@@ -123,4 +139,36 @@
   <pre class="prettyprint hljs-dark"><code class="hljs sql"><div class="hljs-line">git reflog 查看所有版本
 </div><div class="hljs-line">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard 版本号</span>
 </div></code></pre>
-</blockquote></div></body></html>
+</blockquote>
+
+
+
+<h5 id="添加远程库-将本地文件放到github上">添加远程库 （将本地文件放到GitHub上）</h5>
+
+<blockquote>
+  <p>1.注册 登录 GitHub账号  <br>
+  2.创建一个仓库 <br>
+  3.将本地文件存放在暂存区  <br>
+  4.将本地文件存在在历史取（当前分支）上 <br>
+  5.关联远程库 </p>
+  
+  <pre class="prettyprint hljs-dark"><code class="hljs dockerfile"><div class="hljs-line">git remote <span class="hljs-keyword">add</span><span class="bash"> origin 地址</span>
+</div></code></pre>
+</blockquote>
+
+<ol start="6"><li rel="6">推送文件</li>
+</ol>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs crmsh"><div class="hljs-line">git push origin <span class="hljs-keyword">master</span> <span class="hljs-title"></span>
+</div></code></pre>
+</blockquote>
+
+<p>7.拉取最新的代码</p>
+
+<blockquote>
+  <pre class="prettyprint hljs-dark"><code class="hljs crmsh"><div class="hljs-line">git pull origin <span class="hljs-literal">master</span>
+</div></code></pre>
+</blockquote>
+
+<h4 id="gui界面化">GUI界面化</h4></div></body></html>
